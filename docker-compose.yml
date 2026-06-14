@@ -1,13 +1,13 @@
 services:
-  mhxinfobot:
+  watchdog:
     build: .
-    container_name: mhxinfobot
+    container_name: watchdog
     restart: unless-stopped
     environment:
       - TZ=America/Chicago
     volumes:
-      - mhx_repo:/opt/mhxinfobot
-      - ${HOME}/configs/mhxinfobot/config.json:/config/config.json:ro
+      - watchdog_repo:/opt/watchdog
+      - ${HOME}/configs/watchdog/config.json:/config/config.json:ro
 
 volumes:
-  mhx_repo:
+  watchdog_repo:
